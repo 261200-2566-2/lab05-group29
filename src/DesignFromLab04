@@ -1,0 +1,87 @@
+RPG Character Interface:
+
+    Character Overview:
+
+    * Name[Character Name]
+    * Class [Character Class]
+    * Level [Character Level]
+    * Health Point(HP) :[MaxHP]/[CurrentHP]
+    * Magic Point(MP)  : [MaxMP]/[CurrentMP]
+    * Experience Point(XP) :[XP to Next Level]/[CurrentHP]
+
+
+    Abilities:
+        - Primary Attack : [Attack Name]
+        - Special Ability 1 : [Ability 1 Name]-[Description]
+        - Special Ability 2 : [Ability 2 Name]-[Description]
+        - Special Ability 3 : [Ability 3 Name]-[Description]
+        - Special Ability 4 : [Ability 4 Name]-[Description]
+        - Class-Special Ability : [Class Ability Name]-[Description]
+
+
+    Equipment:
+        - Head:[Accessory Name]-[Effects]
+        - Body:[Accessory Name]-[Effects]
+        - Gauntlets:[Accessory Name]-[Effects]
+        - Boots:[Accessory Name]-[Effects]
+        - Ring1:[Accessory Name]-[Effects]
+        - Ring2:[Accessory Name]-[Effects]
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+public interface RPGCharacter{
+       void atk(); //โจมตี
+       void def(); //ป้องกัน
+       void useSpecialAbility(); //ใช้ skill พิเศษ
+       void useItem();  // ใช้ item
+}
+
+public interface Warrior extends RPGCharacter{
+        void performSpecialAbility();   // คลาส Warrior สามารถใช้ท่าไม่ตายก็เกือบตายแต่ไม่ตาย
+}
+
+public interface Mage extends RPGCharacter{
+        void castSpell();   // ร่ายเวทได้จ้า
+}
+
+public interface Assassin extends RPGCharacter{
+        void invisibility();  // หายตั๋ว
+}
+
+public interface Archer extends RPGCharacter{
+        void  heavyShot();  // ยิงหนักๆเกาะแตกซะแหลกขาด
+}
+
+public interface RPGAccessory{
+       void equip();      //ติดตั้งอุปกรณ์
+       void unequip();    //ถอดอุปกรณ์
+       void information(); // รายละเอียดของอุปกรณ์
+       void drop();        // ทิ้งอุปกรณ์
+}
+
+public interface Head extends RPGAccessory{
+        void increaseCriticalRate();  //เพิ่มอัตราการติด Critical
+}
+
+public interface Body extends RPGAccessory{
+        void increasesArmorAndHP();   // เพิ่มเลือดและเกาะแบบเบิ้มๆ
+}
+
+public interface Gauntlets extends RPGAccessory{
+        void attackSpeed();        //ตีไวตีว่อง
+}
+
+public interface Boots extends RPGAccessory{
+        void runSpeed();         //เพิ่มความเร็วในการวิ่ง
+}
+
+public interface Rings extends RPGAccessory{
+        void vampire();        //ดูดเลือด
+}
+
+
+
+
+
+
