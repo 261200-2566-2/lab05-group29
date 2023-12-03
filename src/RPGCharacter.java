@@ -8,19 +8,4 @@ public interface RPGCharacter {
 
 
 }
- interface Warrior extends RPGCharacter{
-    void performSpecialAbility();
-}
-
- interface Mage extends RPGCharacter{
-    void castSpell();   // ร่ายเวทได้จ้า
-}
-
- interface Assassin extends RPGCharacter{
-    void invisibility();  // หายตั๋ว
-}
-
- interface Archer extends RPGCharacter{
-    void  heavyShot();  // ยิงหนักๆเกาะแตกซะแหลกขาด
-}
 
